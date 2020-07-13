@@ -15,4 +15,4 @@ All models have been trained on RTX 2080 Ti (with 12 GB memory).
 Paper is not oficially published yet.
 ```
 
-Please see README's in individual subfolders `subtask_1` and `sub_task_2` for further details.
+Please see README's in individual subfolders `subtask_1` and `sub_task2` for further details.
