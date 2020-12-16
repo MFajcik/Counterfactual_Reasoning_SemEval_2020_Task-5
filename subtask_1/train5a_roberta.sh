@@ -1,0 +1,17 @@
+python3 ./examples/run_semeval.py \
+--model_type roberta \
+--task_name task5a \
+--model_name_or_path roberta-large \
+--do_eval \
+--do_lower_case \
+--data_dir /mnt/minerva1/nlp/projects/counterfactual/semeval/5/Subtask-1-master/ \
+--learning_rate 2e-5 \
+--num_train_epochs 15 \
+--max_seq_length 100 \
+--output_dir models_bert/roberta-5a_2 \
+--per_gpu_eval_batch_size=8 \
+--per_gpu_train_batch_size=12 \
+--gradient_accumulation_steps 6 \
+--seed 54321 \
+--overwrite_output  --overwrite_cache \
+--eval_all_checkpoints --do_train\
