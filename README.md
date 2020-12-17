@@ -10,13 +10,12 @@ All models have been trained on RTX 2080 Ti (with 12 GB memory).
 
 ## Bibtex citation
 ```
-@misc{fajcik2020butfit,
-    title={BUT-FIT at SemEval-2020 Task 5: Automatic detection of counterfactual statements with deep pre-trained language representation models},
-    author={Martin Fajcik and Josef Jon and Martin Docekal and Pavel Smrz},
-    year={2020},
-    eprint={2007.14128},
-    archivePrefix={arXiv},
-    primaryClass={cs.CL}
+@inproceedings{fajcik2020but,
+  title={BUT-FIT at SemEval-2020 Task 5: Automatic Detection of Counterfactual Statements with Deep Pre-trained Language Representation Models},
+  author={Fajcik, Martin and Jon, Josef and Docekal, Martin and Smrz, Pavel},
+  booktitle={Proceedings of the Fourteenth Workshop on Semantic Evaluation},
+  pages={437--444},
+  year={2020}
 }
 ```
 
