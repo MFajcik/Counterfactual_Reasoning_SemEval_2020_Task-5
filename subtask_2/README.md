@@ -82,7 +82,7 @@ in `subtask_2/datasets/dataset_task2.py` for details.
     "working_directory": ".predictions" # directory where the immediate predictions and final prediction will be saved
    }
    ```
-   Now, all you need to do is run `src_scripts/transformers_task2/run_prediction.py` and you will obtain two prediction files in the prediction directory (`.predictions` in our example). 
+   Now, all you need to do is to run `src_scripts/transformers_task2/run_prediction.py` and you will obtain two prediction files in the prediction directory (`.predictions` in our example). 
    * `result_<timestamp>.csv`  
      Contains predictions in competition format, e.g.:
      ```
@@ -91,7 +91,9 @@ in `subtask_2/datasets/dataset_task2.py` for details.
       203552,0,39,42,214
      ```
    * `result_<timestamp>.csv_readable.csv`  
-     Contains predictions in human readable format, ordered as `sentenceID,sentence, antecedent, consequent, antecedent_startid,antecedent_endid,consequent_startid,consequent_endid` e.g.:
+     Contains predictions in human readable format, ordered as  
+     `sentenceID,sentence, antecedent, consequent, antecedent_startid,antecedent_endid,consequent_startid,consequent_endid`   
+     e.g.:
      ```
      203551,Sandwich in Kent; until 2011 the flagship of Pfizer's European research should have been closed down years before.,until 2011 the flagship of Pfizer's European research should have been closed down years before,,18,112,-1,-1
       203552,"If the deals were properly accounted for, Bank of America's Tier 1 capital ratio -- a key metric monitored by bank regulators -- would have declined 0.01 percent on Sept 30, 2008, when the largest such error existed.",If the deals were properly accounted for,"Bank of America's Tier 1 capital ratio -- a key metric monitored by bank regulators -- would have declined 0.01 percent on Sept 30, 2008, when the largest such error existed",0,39,42,214
