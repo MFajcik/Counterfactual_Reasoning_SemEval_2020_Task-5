@@ -35,7 +35,7 @@ in `subtask_2/datasets/dataset_task2.py` for details.
 
 3. __INFERENCE__    
      If you haven't trained your model, you can use ours `RoBERTa-large` 
-     checkpoint available [here](http://www.stud.fit.vutbr.cz/~ifajcik/semeval2020/task5/semeval2020task5b_roberta_large_EM_74.65_F1_88.63_L_0.60_statedict.pt).
+     checkpoint available [here](http://www.stud.fit.vutbr.cz/~ifajcik/semeval2020/task5/semeval2020task5b_roberta_large_EM_74.65_F1_88.63_L_0.60_statedict.pt) (if link won't work try copy it into new window).
    
    __validation__  
    __custom_inputs__
