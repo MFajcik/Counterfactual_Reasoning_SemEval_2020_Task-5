@@ -1,4 +1,4 @@
-# BUT-FIT at SemEval-2020 Task 5:  Automatic detection of counterfactual statements with deep pre-trained language representation models
+## BUT-FIT at SemEval-2020 Task 5:  Automatic detection of counterfactual statements with deep pre-trained language representation models
 __Authors__:
 * Martin Fajčík
 * Josef Jon
