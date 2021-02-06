@@ -61,7 +61,7 @@ def validate_ensemble():
         average_probs(prob_files, ensemble_prob_file)
         framework.make_output(config["test_file"], ensemble_prob_file, ensemble_result_file, debug_result_file=True)
 
-        result = f"{ensemble_result_file}_debug.csv"
+        result = f"{ensemble_result_file}_readable.csv"
         gt = f".data/semeval2020_5/{config['test_file']}"
         gpd = pd.read_csv(gt, encoding='utf-8').to_numpy()
         rpd = pd.read_csv(result, encoding='utf-8', header=None).to_numpy()

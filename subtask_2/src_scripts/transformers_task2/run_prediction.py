@@ -1,34 +1,32 @@
 import logging
 import os
 import sys
-
 import torch
 
 from src_scripts.common.utils import setup_logging, mkdir, get_timestamp
 from src_scripts.transformers_task2.ensembling.ensemble_tools import average_probs
 from src_scripts.transformers_task2.task2_transformers_trainer import TransformerTask2Framework
 
-model_paths = [f"saved/super_albert/{f}" for f in os.listdir(f"saved/super_albert") if f.endswith(".pt")]
-
 config = {
     "objective_variant": "independent",
     "decoding_variant": "independent",
-    "tokenizer_type": "albert-xxlarge-v1",
-    "model_type": "albert-xxlarge-v1",
+    "tokenizer_type": "roberta-large",
+    "model_type": "roberta-large",
     "max_antecedent_length": 116,  # optimized via 1000 hyperopt trials
-    "max_consequent_length": 56,
+    "max_consequent_length": 56,  # optimized via 1000 hyperopt trials
     "tensorboard_logging": False,
-    "model_paths": model_paths,
-    "test_file": "Subtask-2-test-master/subtask2_test.csv",
+    "model_dir": "saved",  # directory containing all checkpoints
+    "test_file": "input_data.csv",  # path to input data
     "dropout_rate": 0.,
     "cache_dir": "./.BERTcache",
+    "working_directory": ".predictions"  # path where the immediate predictions and final prediction will be saved
 }
 
-_WORKDIR = ".predictions/precomputed_albert_fl/test_data"
+model_paths = [os.path.join(config['model_dir'], f) for f in os.listdir(config['model_dir']) if f.endswith(".pt")]
+config["model_paths"] = model_paths
+_WORKDIR = config["working_directory"]
 
 PRECOMPUTED_PROB_FILES = None
-# p = ".predictions/precomputed_same_seeds_greedy_fl/test_data"
-# PRECOMPUTED_PROB_FILES = [f"{p}/{f}" for f in os.listdir(p) if f.endswith(".pkl")]
 
 ensemble_prob_file = f"{_WORKDIR}/ensemble_probs_avg_{get_timestamp()}.pkl"  #
 ensemble_result_file = f"{_WORKDIR}/result_{get_timestamp()}.csv"

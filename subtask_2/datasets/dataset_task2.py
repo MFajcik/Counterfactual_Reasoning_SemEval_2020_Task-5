@@ -94,7 +94,7 @@ class SemEvalECFR_Dataset(data.Dataset):
 
     @staticmethod
     def check_for_download(cachedir):
-        if not os.path.exists(cachedir):
+        if not os.path.exists(cachedir) and cachedir:
             os.makedirs(cachedir)
             try:
                 download_url(os.path.join(cachedir, TRAIN_F_SEMEVAL2020_5), TRAIN_URL_SEMEVAL2020_5)
@@ -143,7 +143,7 @@ class SemEvalECFR_Dataset(data.Dataset):
         problems = 0
         for index, row in tqdm(df.iterrows(), total=len(df), desc="Preprocessing data"):
             sentence, positions = self.tokenize_spacy_subword(row["sentence"])
-            if len(sentence)>self.max_len:
+            if len(sentence) > self.max_len:
                 logging.info(f"Truncating sentence\n{row['sentence']}...")
             numericalized_sentence = self.tokenizer.convert_tokens_to_ids(
                 sentence[:self.max_len])

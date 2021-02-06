@@ -255,7 +255,7 @@ class TransformerTask2Framework:
         logging.debug(json.dumps(self.config, indent=4, sort_keys=True))
         fields = SemEvalECFR_Dataset.prepare_fields(pad_t=self.tokenizer.pad_token_id)
 
-        data = SemEvalECFR_Dataset(file, fields=fields, tokenizer=self.tokenizer,
+        data = SemEvalECFR_Dataset(file, fields=fields, tokenizer=self.tokenizer, cachedir="",
                                    model_type=self.config["model_type"], predict_mode=True)
         predict_iter = Iterator(data,
                                 sort=False,
@@ -377,8 +377,7 @@ class TransformerTask2Framework:
                                   repeat=False,
                                   device=self.device)
 
-        def load_model() \
-                -> TransformerForECFR:
+        def load_model() -> TransformerForECFR:
             return TransformerForECFR(self.config,
                                       sep_token=self.tokenizer.sep_token_id,
                                       pad_token=self.tokenizer.pad_token_id)
@@ -443,7 +442,7 @@ class TransformerTask2Framework:
                     ensemble_probs = pickle.load(f)
             fields = SemEvalECFR_Dataset.prepare_fields(pad_t=self.tokenizer.pad_token_id)
 
-            data = SemEvalECFR_Dataset(file, fields=fields, tokenizer=self.tokenizer,
+            data = SemEvalECFR_Dataset(file, fields=fields, tokenizer=self.tokenizer, cachedir='',
                                        model_type=self.config["model_type"], predict_mode=True)
             predict_iter = Iterator(data,
                                     sort=False,
@@ -455,7 +454,7 @@ class TransformerTask2Framework:
             dbg_f = None
             try:
                 if debug_result_file:
-                    dbg_f = open(ensemble_result_file + "_debug.csv", 'w')
+                    dbg_f = open(ensemble_result_file + "_readable.csv", 'w')
                     debug_result_writer = csv.writer(dbg_f)
                 distributions = dict()
                 for i, batch in tqdm(enumerate(predict_iter),

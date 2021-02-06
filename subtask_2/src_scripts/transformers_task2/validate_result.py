@@ -4,7 +4,7 @@ import numpy as np
 from src_scripts.common.evaluate import evaluate_semeval2020_task5
 
 if __name__ == "__main__":
-    result = ".predictions/result_2020-03-03_12:55.csv_debug.csv"
+    result = ".predictions/result_2020-03-03_12:55.csv_readable.csv"
     gt = ".data/semeval2020_5/val_task2.csv"
     gpd = pd.read_csv(gt, encoding='utf-8').to_numpy()
     rpd = pd.read_csv(result, encoding='utf-8', header=None).to_numpy()
