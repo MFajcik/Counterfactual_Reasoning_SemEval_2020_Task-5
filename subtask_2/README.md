@@ -4,7 +4,9 @@
 
 Detection of antecedent and consequence – extract boundaries of antecedent and consequent from the input text.
 
-Correspondence to: ifajcik@fit.vutbr.cz Full list of results reported in the paper is
+Correspondence to: ifajcik@fit.vutbr.cz   
+
+Full list of results reported in the paper is
 available [here](https://docs.google.com/spreadsheets/d/1msV2PqCM4OgiYQHvayuEcby5IpSGDM9OH2nHg8_QwlU/edit?usp=sharing).
 
 ### Data
