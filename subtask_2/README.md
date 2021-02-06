@@ -38,7 +38,7 @@ in `subtask_2/datasets/dataset_task2.py` for details.
      checkpoint available [here](http://www.stud.fit.vutbr.cz/~ifajcik/semeval2020/task5/semeval2020task5b_roberta_large_EM_74.65_F1_88.63_L_0.60_statedict.pt) (if link won't work try copy it into new window/plug it into `wget`).
    
    __validation__  
-   Simply set `eval_only` key in runfile configuration to `True` and set `model_path` key  to path to your checkpoint (relative from you PYTHONPATH). For example, assuming the provided checkpoint is in directory `subtask2`, and you modify your run_file as following (e.g. run_roberta_large_task2.py):
+   Simply set `eval_only` key in runfile configuration to `True` and set `model_path` key  to path to your checkpoint (relative from your PYTHONPATH). For example, assuming the provided checkpoint is in directory `subtask2`, and you modify your run_file as following (e.g. run_roberta_large_task2.py):
    ```
    config={
    ...
