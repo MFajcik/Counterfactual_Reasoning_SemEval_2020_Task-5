@@ -29,7 +29,7 @@ config = {
     "cache_dir": "./.BERTcache",
 
     "model_path": "semeval2020task5b_roberta_large_EM_74.65_F1_88.63_L_0.60_statedict.pt",
-    "eval_only": True
+    "eval_only": False
 }
 
 # Parameters found via hyperopt
