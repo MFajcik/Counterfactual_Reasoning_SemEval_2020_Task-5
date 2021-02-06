@@ -5,7 +5,7 @@ __Authors__:
 * Martin Dočekal
 * Pavel Smrž
 
-This is a official implementation we have used in the SemEval-2019 Task 7. Our publication is available [here](xxx).
+This is a official implementation we have used in the SemEval-2020 Task 5. Our publication is available [here](https://www.aclweb.org/anthology/2020.semeval-1.53/).
 All models have been trained on RTX 2080 Ti (with 12 GB memory).
 
 ## Bibtex citation
