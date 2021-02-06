@@ -20,5 +20,3 @@ All models have been trained on RTX 2080 Ti (with 12 GB memory).
 ```
 
 Please see README's in individual subfolders `subtask_1` and `subtask_2` for further details.
-
-__The repository is still under construction & cleanup. Some parts of the code may got broken during development.__
