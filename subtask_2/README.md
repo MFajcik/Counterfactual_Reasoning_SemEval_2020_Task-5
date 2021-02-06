@@ -20,8 +20,8 @@ in `subtask_2/datasets/dataset_task2.py` for details.
    cd subtask_2
    python -m pip install -r requirements.txt
    ```
-1. __PATHS__  
-   Set your `PYTHONPATH` to `subtask_2` folder
+1. __IMPORT PATHS__  
+   Set your `PYTHONPATH` to `subtask_2` folder. Run every script from this folder.
    ```
    export PYTHONPATH=$(pwd)
    ```
@@ -38,8 +38,28 @@ in `subtask_2/datasets/dataset_task2.py` for details.
      checkpoint available [here](http://www.stud.fit.vutbr.cz/~ifajcik/semeval2020/task5/semeval2020task5b_roberta_large_EM_74.65_F1_88.63_L_0.60_statedict.pt) (if link won't work try copy it into new window/plug it into `wget`).
    
    __validation__  
-   __custom_inputs__
-
+   Simply set `eval_only` key in runfile configuration to `True` and set `model_path` key  to path to your checkpoint (relative from you PYTHONPATH). For example, assuming the provided checkpoint is in directory `subtask2`, and you modify your run_file as following (e.g. run_roberta_large_task2.py):
+   ```
+   config={
+   ...
+   "model_path": "semeval2020task5b_roberta_large_EM_74.65_F1_88.63_L_0.60_statedict.pt",
+   "eval_only": True
+   ...
+   }
+   ```
+   You should obtain following outputs, based on 10% of data split from original training data.
+   ```
+   total EM: 74.64788732394366
+   total F1: 88.62808947513123
+   antecedent EM: 79.43661971830986
+   antecedent F1: 92.22556136965888
+   consequent EM: 69.85915492957747
+   consequent F1: 85.03061758060359
+   no-consequent ACCURACY: 91.54929577464789
+   ```
+   
+   __predicting the custom_inputs__
+   tbd.
 
 4. __HELP I AM STUCK/LOST__  
 If anything won't work well, trying reaching out for help via email (`ifajciK@fit.vutbr.cz`) or create an issue :wink: .
