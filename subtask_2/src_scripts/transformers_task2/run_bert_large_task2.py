@@ -30,6 +30,7 @@ config = {
     "eval_only": False
 }
 
+# Parameters found via hyperopt
 optimized_config = {
     "dropout_rate": 0.04152933951236242,
     "learning_rate": 1.26299972676114e-05,
@@ -42,14 +43,13 @@ optimized_config = {
 config.update(optimized_config)
 
 if __name__ == "__main__":
-    for _ in range(10):
-        setup_logging(os.path.basename(sys.argv[0]).split(".")[0],
-                      logpath=".logs/",
-                      config_path="configurations/logging.yml")
-        device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-        try:
-            framework = TransformerTask2Framework(config, device)
-            framework.fit()
-        except BaseException as be:
-            logging.error(be)
-            raise be
+    setup_logging(os.path.basename(sys.argv[0]).split(".")[0],
+                  logpath=".logs/",
+                  config_path="configurations/logging.yml")
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    try:
+        framework = TransformerTask2Framework(config, device)
+        framework.fit()
+    except BaseException as be:
+        logging.error(be)
+        raise be

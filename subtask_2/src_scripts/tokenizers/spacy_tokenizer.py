@@ -31,7 +31,7 @@ def create_custom_tokenizer(nlp):
                      token_match=None)
 
 
-_spacy_en = spacy.load('en')
+_spacy_en = spacy.load("en_core_web_sm")
 # _spacy_en_vanilla = spacy.load('en')
 _spacy_en.tokenizer = create_custom_tokenizer(_spacy_en)
 

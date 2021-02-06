@@ -30,6 +30,7 @@ config = {
     "eval_only": False
 }
 
+# Parameters found via hyperopt
 optimized_config = {
     "dropout_rate": 0.04152933951236242,
     "learning_rate": 1.26299972676114e-05,
