@@ -59,7 +59,7 @@ in `subtask_2/datasets/dataset_task2.py` for details.
    ```
    
    __predicting the custom_inputs__  
-   You wil need to create inputs in test data format - two-column csv with header - you can create 2 example input file called `input_data.csv` with following contents:
+   You wil need to create inputs in test data format - two-column csv with header. For example, we create 2 example input file called `input_data.csv` with following contents:
    ```
    sentenceID,sentence
    203551,Sandwich in Kent; until 2011 the flagship of Pfizer's European research should have been closed down years before.
