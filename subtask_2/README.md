@@ -58,7 +58,7 @@ in `subtask_2/datasets/dataset_task2.py` for details.
    no-consequent ACCURACY: 91.54929577464789
    ```
    
-   __predicting the custom_inputs__
+   __predicting the custom_inputs__  
    You wil need to create inputs in test data format - two-column csv with header - you can create 2 example input file called `input_data.csv` with following contents:
    ```
    sentenceID,sentence
